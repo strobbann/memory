@@ -1,4 +1,7 @@
 {
   "extends": "eslint-config-airbnb",
-  "rules": {}
+  "rules": {},
+  "globals": {
+    "memory": true
+  }
 }

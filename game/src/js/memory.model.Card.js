@@ -1,8 +1,7 @@
 memory.model.Card = class {
-  constructor(id, frontImg, backImg, type) {
+  constructor(id, frontImg, type) {
     this.id = id;
     this.frontImg = frontImg;
-    this.backImg = backImg;
     this.type = type;
   }
   isSameCard(type) {

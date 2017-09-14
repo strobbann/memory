@@ -4,7 +4,7 @@ memory.model.Card = class {
     this.frontImg = frontImg;
     this.type = type;
   }
-  isSameCard(type) {
+  isSameType(type) {
     return this.type === type;
   }
 };

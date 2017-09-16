@@ -52,6 +52,7 @@ memory.ui.rightCard = () => {
   backImages.forEach((item) => {
     if (item.style.display === 'none') {
       item.parentNode.remove();
+
     }
   });
 }

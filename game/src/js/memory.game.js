@@ -31,7 +31,6 @@ memory.game = function newGame() {
       }
     }
   }));
-
   setTimeout(() => {
     memory.ui.resetCards();
   }, 2000);

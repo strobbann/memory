@@ -46,12 +46,12 @@ memory.ui.rightCard = () => {
   const backImages = document.querySelectorAll('.back');
   frontImages.forEach((item) => {
     if (item.style.display === 'block') {
-      item.remove();
+      item.parentNode.remove();
     }
   });
   backImages.forEach((item) => {
     if (item.style.display === 'none') {
-      item.remove();
+      item.parentNode.remove();
     }
   });
 }

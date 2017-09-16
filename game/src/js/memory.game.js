@@ -1,14 +1,17 @@
-memory.game = () => {
+memory.game = function newGame() {
   let score = 0;
   let cardsClicked = [];
+  let cardsLeft = memory.repository.cards.length;
+  console.log('new game');
   memory.repository.cards.forEach(item => memory.ui.createCard(item, () => {
     if (cardsClicked.length < 2) {
       cardsClicked.push(item);
       if (cardsClicked.length === 2) {
         const card = cardsClicked.pop();
         const card2 = cardsClicked.pop();
-        if (card.isSameType(card2.type)) {
-          console.log('uwin');
+        if (card.isSameType(card2)) {
+          cardsLeft -= 2;
+          console.log(cardsLeft);
           setTimeout(() => {
             memory.ui.rightCard();
           }, 1000);
@@ -19,10 +22,16 @@ memory.game = () => {
             cardsClicked = cardsClicked.splice();
           }, 1000);
         }
+        if (cardsLeft === 0) {
+          setTimeout(() => {
+            console.log('u have won')
+            memory.game();
+          }, 2500);
+        }
       }
     }
-    console.log(cardsClicked);
   }));
+
   setTimeout(() => {
     memory.ui.resetCards();
   }, 2000);

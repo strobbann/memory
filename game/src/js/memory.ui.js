@@ -18,7 +18,6 @@ memory.ui.createCard = (card, func) => {
 
   cardHolder.addEventListener('click', () => {
     cardFront.style.display = 'block';
-    cardFront.style.transition = '0.7s';
     cardBack.style.display = 'none';
     console.log('u have clicked me');
     func();

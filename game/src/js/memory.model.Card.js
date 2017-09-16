@@ -4,8 +4,8 @@ memory.model.Card = class {
     this.frontImg = frontImg;
     this.type = type;
   }
-  isSameType(type) {
-    return this.type === type;
+  isSameType(card) {
+    return this.type === card.type;
   }
 };
 memory.model.Card.Type = {

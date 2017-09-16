@@ -23,4 +23,7 @@ memory.game = () => {
     }
     console.log(cardsClicked);
   }));
+  setTimeout(() => {
+    memory.ui.resetCards();
+  }, 2000);
 };

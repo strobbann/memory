@@ -1,3 +1,4 @@
+/* global document */
 memory.ui = {};
 memory.ui.createCard = (card, func) => {
   const cardFront = document.createElement('img');
@@ -38,7 +39,7 @@ memory.ui.resetCards = () => {
       item.style.display = 'block';
     }
   });
-}
+};
 
 memory.ui.rightCard = () => {
   const frontImages = document.querySelectorAll('.front');
@@ -51,7 +52,6 @@ memory.ui.rightCard = () => {
   backImages.forEach((item) => {
     if (item.style.display === 'none') {
       item.parentNode.remove();
-
     }
   });
-}
+};

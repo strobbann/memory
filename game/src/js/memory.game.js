@@ -1,5 +1,7 @@
 memory.game = function newGame() {
-  let score = 0;
+  memory.repository.cards.sort(() => 0.5 - Math.random());
+  // eslint-disable-next-line
+  const score = 0;
   let cardsClicked = [];
   let cardsLeft = memory.repository.cards.length;
   console.log('new game');
@@ -23,8 +25,8 @@ memory.game = function newGame() {
           }, 1000);
         }
         if (cardsLeft === 0) {
-          setTimeout(() => {
-            console.log('u have won')
+          setTimeout(() => {
+            console.log('u have won');
             memory.game();
           }, 2500);
         }
@@ -33,5 +35,5 @@ memory.game = function newGame() {
   }));
   setTimeout(() => {
     memory.ui.resetCards();
-  }, 2000);
+  }, 5000);
 };

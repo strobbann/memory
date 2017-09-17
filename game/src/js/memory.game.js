@@ -38,3 +38,7 @@ memory.game = () => {
     memory.ui.resetCards();
   }, 5000);
 };
+/* global document */
+document.addEventListener('DOMContentLoaded', () => {
+  memory.game();
+});

@@ -1,4 +1,4 @@
-memory.game = function newGame() {
+memory.game = () => {
   memory.repository.cards.sort(() => 0.5 - Math.random());
   // eslint-disable-next-line
   const score = 0;

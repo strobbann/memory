@@ -26,6 +26,7 @@ memory.game = function newGame() {
         }
         if (cardsLeft === 0) {
           setTimeout(() => {
+            memory.ui.clearBoard();
             console.log('u have won');
             memory.game();
           }, 2500);

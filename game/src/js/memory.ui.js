@@ -21,6 +21,7 @@ memory.ui.createCard = (card, func) => {
     cardFront.style.display = 'block';
     cardBack.style.display = 'none';
     console.log('u have clicked me');
+    cardHolder.style.pointerEvents = 'none';
     func();
   });
   return cardHolder;
@@ -30,13 +31,14 @@ memory.ui.resetCards = () => {
   const frontImages = document.querySelectorAll('.front');
   const backImages = document.querySelectorAll('.back');
   frontImages.forEach((item) => {
-    if (item.style.display === 'block') {
+    if (item.style.display === 'block' && item.style.opacity !== '0') {
       item.style.display = 'none';
     }
   });
   backImages.forEach((item) => {
-    if (item.style.display === 'none') {
+    if (item.style.display === 'none' && item.style.opacity !== '0') {
       item.style.display = 'block';
+      item.parentNode.style.pointerEvents = 'auto';
     }
   });
 };
@@ -46,12 +48,21 @@ memory.ui.rightCard = () => {
   const backImages = document.querySelectorAll('.back');
   frontImages.forEach((item) => {
     if (item.style.display === 'block') {
-      item.parentNode.remove();
+      item.style.opacity = '0';
+      item.parentNode.style.pointerEvents = 'none';
+      // item.parentNode.remove();
     }
   });
   backImages.forEach((item) => {
     if (item.style.display === 'none') {
-      item.parentNode.remove();
+      item.style.opacity = '0';
+      item.parentNode.style.pointerEvents = 'none';
+      // item.parentNode.remove();
     }
   });
+};
+
+memory.ui.clearBoard = () => {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(item => item.remove());
 };

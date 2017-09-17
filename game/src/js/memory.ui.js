@@ -1,3 +1,4 @@
+/* global document */
 memory.ui = {};
 memory.ui.createCard = (card, func) => {
   const cardFront = document.createElement('img');
@@ -18,7 +19,6 @@ memory.ui.createCard = (card, func) => {
 
   cardHolder.addEventListener('click', () => {
     cardFront.style.display = 'block';
-    cardFront.style.transition = '0.7s';
     cardBack.style.display = 'none';
     console.log('u have clicked me');
     func();
@@ -39,7 +39,7 @@ memory.ui.resetCards = () => {
       item.style.display = 'block';
     }
   });
-}
+};
 
 memory.ui.rightCard = () => {
   const frontImages = document.querySelectorAll('.front');
@@ -52,7 +52,6 @@ memory.ui.rightCard = () => {
   backImages.forEach((item) => {
     if (item.style.display === 'none') {
       item.parentNode.remove();
-
     }
   });
-}
+};

@@ -8,7 +8,7 @@ memory.model.Card = class {
     return this.type === card.type;
   }
 };
-memory.model.Card.Type = {
+memory.model.Card.type = {
   BEAR: 'Bear',
   BUNNY: 'Bunny',
   CHICKEN: 'Chicken',
